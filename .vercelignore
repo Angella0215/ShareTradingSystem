@@ -1,0 +1,13 @@
+# Never upload local credentials, raw archives or investor identity documents.
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+backend/uploads/
+database/original-data.json
+*.zip
+*.rar
+node_modules/
+**/node_modules/
+**/dist/
+.vercel/
