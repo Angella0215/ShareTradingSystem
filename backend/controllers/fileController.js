@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { uploadDir } = require('../config/upload');
 const db = require('../config/db');
 const { logAudit } = require('../utils/audit');
 
@@ -10,7 +11,7 @@ exports.getFile = async (req, res) => {
         return res.status(400).json({ message: 'Invalid file name.' });
     }
 
-    const fullPath = path.resolve('uploads', name);
+    const fullPath = path.join(uploadDir, name);
     if (!fs.existsSync(fullPath)) {
         return res.status(404).json({ message: 'Document not found.' });
     }
